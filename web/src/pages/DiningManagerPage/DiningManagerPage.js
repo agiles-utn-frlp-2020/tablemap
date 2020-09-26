@@ -1,4 +1,4 @@
-import Navbar from 'src/components/Navbar/Navbar.js';
+import Navbar from 'src/components/Navbar/Navbar.js'
 
 const DiningManagerPage = () => {
   return (
