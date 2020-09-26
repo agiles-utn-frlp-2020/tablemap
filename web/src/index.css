@@ -15,6 +15,8 @@
 @layer base {
   #redwood-app {
     @apply h-screen;
+    @apply flex;
+    @apply flex-col;
   }
 
   h1 {
