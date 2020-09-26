@@ -7,6 +7,17 @@
     "@redwoodjs/api": "^0.19.1"
   },
   "devDependencies": {
-    "@prisma/cli": "^2.6.1"
+    "@prisma/cli": "^2.6.1",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
   }
 }
