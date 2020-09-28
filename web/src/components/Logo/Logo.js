@@ -15,12 +15,14 @@ const Logo = (props) => {
         width="50"
         height="50"
       >
-        <circle cx="25" cy="25" r="25" fill="#C4C4C4" />
+        <circle cx="25" cy="25" r="25" fill="#FFF"/>
       </mask>
+
       <g mask="url(#mask0)">
-        <rect x="25" width="25" height="25" fill="#4C51BF" />
-        <rect x="25" y="25" width="25" height="25" fill="#7F9CF5" />
-        <rect y="25" width="25" height="25" fill="#EBF4FF" />
+        <rect width="25" height="25" className="text-white fill-current hover:text-indigo-100"/>
+        <rect y="25" width="25" height="25" className="text-indigo-200 fill-current hover:text-indigo-300" />
+        <rect x="25" y="25" width="25" height="25" className="text-indigo-400 fill-current hover:text-indigo-500" />
+        <rect x="25" width="25" height="25" className="text-indigo-600 fill-current hover:text-indigo-700"/>
       </g>
     </svg>
   )
