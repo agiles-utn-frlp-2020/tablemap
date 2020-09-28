@@ -31,7 +31,7 @@ const Table = (props) => {
         x={x}
         y={y}
       />
-      g
+
       <text
         x={textPos.x}
         y={textPos.y}
