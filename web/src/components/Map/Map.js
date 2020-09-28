@@ -1,5 +1,5 @@
 const Table = (props) => {
-  const { x, y, isSelected, isOpen, name, onClick } = props
+  const { x, y, isSelected, isOpen, name, onSelectTable } = props
 
   const fontSize = 16
 
@@ -18,8 +18,13 @@ const Table = (props) => {
     strokeWidth = 4
   }
 
+  const onClick = (e) => {
+    e.stopPropagation();
+    onSelectTable(name)
+  }
+
   return (
-    <g onClick={() => onClick(name)}>
+    <g onClick={onClick}>
       <rect
         width={width}
         height={height}
@@ -38,6 +43,7 @@ const Table = (props) => {
         textAnchor="middle"
         fontFamily="monospace"
         fontSize={fontSize}
+        className="cursor-pointer select-none"
       >
         <tspan x={textPos.x} y={textPos.y}>
           {name}
@@ -54,7 +60,7 @@ const Table = (props) => {
 
 const Map = ({ className, tables, onSelectTable }) => {
   return (
-    <div className={className}>
+    <div className={className} onClick={onSelectTable}>
       <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern
@@ -90,7 +96,7 @@ const Map = ({ className, tables, onSelectTable }) => {
         <rect width="100%" height="100%" fill="url(#grid)" />
 
         {tables.map((table) => (
-          <Table key={table.name} {...table} onClick={onSelectTable} />
+          <Table key={table.name} {...table} onSelectTable={onSelectTable} />
         ))}
       </svg>
     </div>
